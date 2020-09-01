@@ -1,4 +1,3 @@
-import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
 
 group = "com.g12"
 version = "1.0-SNAPSHOT"
@@ -6,11 +5,16 @@ description = "boot-jpa-kotlin"
 
 plugins {
 
+    kotlin("jvm")
     kotlin("plugin.jpa") version Versions.kotlin
     kotlin("plugin.spring") version Versions.kotlin
+    kotlin("kapt")
 
     id("org.springframework.boot") version Versions.springBoot
     id("io.spring.dependency-management") version "1.0.10.RELEASE"
+}
+
+sourceSets {
 }
 
 dependencies {
@@ -24,4 +28,3 @@ dependencies {
 //    "runtimeOnly"("org.springframework.boot:spring-boot-devtools")
 //    "testImplementation"("org.springframework.boot:spring-boot-starter-test")
 }
-

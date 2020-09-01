@@ -15,10 +15,15 @@ java {
 }
 
 allprojects {
+
     repositories {
         mavenLocal()
         mavenCentral()
     }
+}
+
+subprojects {
+    apply(plugin = "kotlin")
 
     tasks.withType<KotlinCompile> {
         kotlinOptions {
@@ -31,3 +36,7 @@ allprojects {
         targetCompatibility = "1.8"
     }
 }
+
+
+
+
