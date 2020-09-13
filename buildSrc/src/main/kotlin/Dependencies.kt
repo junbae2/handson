@@ -6,6 +6,8 @@ object Versions {
     const val kotlin = "1.4.0"
     const val springBoot = "2.3.1.RELEASE"
     const val springBootDependencyManager = "1.0.10.RELEASE"
+
+    const val testContainer = "1.14.3"
 }
 
 fun PluginDependenciesSpec.kotlinSpringBootPlugin() {
