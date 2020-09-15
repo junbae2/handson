@@ -5,6 +5,13 @@ description = "boot-jpa-kotlin"
 
 plugins {
     kotlinSpringBootPlugin()
+    kotlin("plugin.allopen") version "1.4.10"
+}
+
+allOpen {
+    annotation("javax.persistence.Entity")
+    annotation("javax.persistence.Embeddable")
+    annotation("javax.persistence.MappedSuperclass")
 }
 
 sourceSets {
