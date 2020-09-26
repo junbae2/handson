@@ -11,8 +11,6 @@ uniqueConstraints = [
     UniqueConstraint(name = "email", columnNames = ["email"])
 ])
 class UserEntity(
-        @Id @GeneratedValue
-        var id: Long,
 
         @Column(name = "email", nullable = false, length = 255)
         var email: String,
@@ -24,7 +22,10 @@ class UserEntity(
         var description: String? = null,
 
         @Column(name = "created_at")
-        var createdAt: LocalDateTime? = null
+        var createdAt: LocalDateTime? = null,
+
+        @Id @GeneratedValue
+        var id: Long? = null
 ) {
 
 }
