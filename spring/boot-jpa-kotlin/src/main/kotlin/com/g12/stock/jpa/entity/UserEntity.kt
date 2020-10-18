@@ -12,7 +12,6 @@ uniqueConstraints = [
     UniqueConstraint(name = "email", columnNames = ["email"])
 ])
 class UserEntity(
-
         @Column(name = "email", nullable = false, length = 255)
         var email: String,
 
@@ -26,5 +25,6 @@ class UserEntity(
         var createdAt: LocalDateTime? = null,
 
         @Id @GeneratedValue
-        var id: Long? = null
+        var id: Long = 0
+
 ) : Serializable

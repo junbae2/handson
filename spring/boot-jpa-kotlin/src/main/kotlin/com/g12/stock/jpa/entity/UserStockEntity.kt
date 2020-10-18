@@ -18,14 +18,14 @@ class UserStockEntity(
 
         @OneToOne(fetch = FetchType.EAGER)
         @JoinColumn(name = "id", referencedColumnName = "stock_id", updatable = false, insertable = false)
-        val stock: StockEntity,
+        val stock: StockEntity? = null,
 
         @Column(name = "traded_at", nullable = false)
         val tradedAt: LocalDateTime,
 
         @Column(name = "sold_at")
-        val soldAt: LocalDateTime,
+        val soldAt: LocalDateTime? = null,
 
         @Id @GeneratedValue
-        val id: Long? = null
+        val id: Long = 0
 ) : Serializable

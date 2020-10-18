@@ -4,9 +4,12 @@ import java.io.Serializable
 import javax.persistence.*
 
 @Entity(name = "stock")
-@Table
+@Table(
+        uniqueConstraints = [
+                UniqueConstraint(name = "market_code", columnNames = ["market", "code"])
+        ]
+)
 class StockEntity(
-
         @Column(name = "market", nullable = false, length = 25)
         val market: String,
 
@@ -20,5 +23,6 @@ class StockEntity(
         val industry: String,
 
         @Id @GeneratedValue
-        val id: Long? = null
+        val id: Long = 0
+
 ) : Serializable
