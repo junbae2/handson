@@ -1,7 +1,7 @@
-package com.g12.greenhabits.controller
+package com.g12.stock.controller
 
-import com.g12.greenhabits.jpa.entity.UserEntity
-import com.g12.greenhabits.jpa.repository.UserRepository
+import com.g12.stock.jpa.entity.UserEntity
+import com.g12.stock.jpa.repository.UserRepository
 import com.ninjasquad.springmockk.MockkBean
 import io.mockk.every
 import org.junit.jupiter.api.Test
@@ -13,7 +13,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.*
 import java.time.LocalDateTime
 
-@WebMvcTest
+@WebMvcTest(UserController::class)
 class UserControllerTest(@Autowired val mockMvc: MockMvc) {
 
     @MockkBean
@@ -26,7 +26,7 @@ class UserControllerTest(@Autowired val mockMvc: MockMvc) {
 
         every { userRepository.findAll() } returns listOf(jbb, sjy)
 
-        mockMvc.perform(get("/api/user/").accept(MediaType.APPLICATION_JSON))
+        mockMvc.perform(get("/api/user").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk)
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("\$.[0].email").value(jbb.email))

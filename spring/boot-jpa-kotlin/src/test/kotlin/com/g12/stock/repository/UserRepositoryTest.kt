@@ -1,7 +1,7 @@
-package com.g12.greenhabits
+package com.g12.stock.repository
 
-import com.g12.greenhabits.jpa.entity.UserEntity
-import com.g12.greenhabits.jpa.repository.UserRepository
+import com.g12.stock.jpa.entity.UserEntity
+import com.g12.stock.jpa.repository.UserRepository
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith

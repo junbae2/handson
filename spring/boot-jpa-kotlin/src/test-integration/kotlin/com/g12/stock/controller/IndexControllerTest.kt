@@ -1,6 +1,6 @@
-package com.g12.greenhabits.controller
+package com.g12.stock.controller
 
-import com.g12.greenhabits.GreenHabitsApplication
+import com.g12.stock.StockApplication
 import org.junit.jupiter.api.AfterAll
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.BeforeAll
@@ -16,7 +16,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension
 @ExtendWith(SpringExtension::class)
 @SpringBootTest(
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
-        classes = [GreenHabitsApplication::class]
+        classes = [StockApplication::class]
 )
 class IndexControllerTest(@Autowired val restTemplate: TestRestTemplate) {
 
