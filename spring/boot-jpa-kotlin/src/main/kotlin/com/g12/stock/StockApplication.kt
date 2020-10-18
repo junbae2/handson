@@ -46,8 +46,7 @@ class Configuration {
         )
 
         for (s in stocks) {
-            val myStocks = userStockRepository.save(UserStockEntity(user.id, s.id, tradedAt = LocalDateTime.now()))
-            println("my stock: user - ${myStocks.userId}, stock - ${myStocks.stock?.code}")
+            userStockRepository.save(UserStockEntity(user.id, s.id, tradedAt = LocalDateTime.now()))
         }
     }
 }
