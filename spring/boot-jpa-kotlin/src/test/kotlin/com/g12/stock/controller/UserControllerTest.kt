@@ -13,7 +13,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.*
 import java.time.LocalDateTime
 
-@WebMvcTest
+@WebMvcTest(UserController::class)
 class UserControllerTest(@Autowired val mockMvc: MockMvc) {
 
     @MockkBean
@@ -26,7 +26,7 @@ class UserControllerTest(@Autowired val mockMvc: MockMvc) {
 
         every { userRepository.findAll() } returns listOf(jbb, sjy)
 
-        mockMvc.perform(get("/api/user/").accept(MediaType.APPLICATION_JSON))
+        mockMvc.perform(get("/api/user").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk)
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("\$.[0].email").value(jbb.email))
