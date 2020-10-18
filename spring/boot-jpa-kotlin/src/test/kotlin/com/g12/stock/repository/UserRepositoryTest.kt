@@ -1,4 +1,4 @@
-package com.g12.stock
+package com.g12.stock.repository
 
 import com.g12.stock.jpa.entity.UserEntity
 import com.g12.stock.jpa.repository.UserRepository
