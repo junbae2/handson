@@ -1,5 +1,6 @@
 package com.g12.greenhabits.jpa.entity
 
+import java.io.Serializable
 import java.time.LocalDateTime
 import javax.persistence.*
 
@@ -26,6 +27,4 @@ class UserEntity(
 
         @Id @GeneratedValue
         var id: Long? = null
-) {
-
-}
+) : Serializable
