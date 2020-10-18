@@ -1,6 +1,6 @@
-package com.g12.greenhabits.jpa.repository
+package com.g12.stock.jpa.repository
 
-import com.g12.greenhabits.jpa.entity.UserStockEntity
+import com.g12.stock.jpa.entity.UserStockEntity
 import org.springframework.data.repository.CrudRepository
 
 interface UserStockRepository : CrudRepository<UserStockEntity, Long> {

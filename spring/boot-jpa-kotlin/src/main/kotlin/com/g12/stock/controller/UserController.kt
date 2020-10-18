@@ -1,6 +1,6 @@
-package com.g12.greenhabits.controller
+package com.g12.stock.controller
 
-import com.g12.greenhabits.jpa.repository.UserRepository
+import com.g12.stock.jpa.repository.UserRepository
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable

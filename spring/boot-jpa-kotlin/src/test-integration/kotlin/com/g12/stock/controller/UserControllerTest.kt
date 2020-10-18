@@ -1,7 +1,7 @@
-package com.g12.greenhabits.controller
+package com.g12.stock.controller
 
-import com.g12.greenhabits.jpa.entity.UserEntity
-import com.g12.greenhabits.jpa.repository.UserRepository
+import com.g12.stock.jpa.entity.UserEntity
+import com.g12.stock.jpa.repository.UserRepository
 import com.ninjasquad.springmockk.MockkBean
 import io.mockk.every
 import org.junit.jupiter.api.Test

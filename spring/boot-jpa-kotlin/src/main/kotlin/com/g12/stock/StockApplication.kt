@@ -1,4 +1,4 @@
-package com.g12.greenhabits
+package com.g12.stock
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

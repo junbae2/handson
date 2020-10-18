@@ -1,4 +1,4 @@
-package com.g12.greenhabits.controller
+package com.g12.stock.controller
 
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model

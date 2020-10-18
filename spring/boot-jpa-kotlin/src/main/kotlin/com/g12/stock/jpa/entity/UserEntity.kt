@@ -1,4 +1,4 @@
-package com.g12.greenhabits.jpa.entity
+package com.g12.stock.jpa.entity
 
 import java.io.Serializable
 import java.time.LocalDateTime

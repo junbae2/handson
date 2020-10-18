@@ -1,6 +1,6 @@
-package com.g12.greenhabits.controller
+package com.g12.stock.controller
 
-import com.g12.greenhabits.GreenHabitsApplication
+import com.g12.stock.GreenHabitsApplication
 import org.junit.jupiter.api.AfterAll
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.BeforeAll
