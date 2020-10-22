@@ -1,7 +1,9 @@
 package com.g12.stock.controller
 
 import com.g12.stock.StockApplication
+import com.g12.stock.jpa.entity.UserEntity
 import org.junit.jupiter.api.AfterAll
+import org.junit.jupiter.api.Assertions.assertNotNull
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
@@ -9,7 +11,6 @@ import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.web.client.TestRestTemplate
-import org.springframework.boot.test.web.client.getForEntity
 import org.springframework.http.HttpStatus
 import org.springframework.test.context.junit.jupiter.SpringExtension
 
@@ -18,7 +19,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
         classes = [StockApplication::class]
 )
-class IndexControllerTest(@Autowired val restTemplate: TestRestTemplate) {
+class UserControllerTest(@Autowired val restTemplate: TestRestTemplate) {
 
     @BeforeAll
     fun setup() {
@@ -26,15 +27,20 @@ class IndexControllerTest(@Autowired val restTemplate: TestRestTemplate) {
     }
 
     @Test
-    fun `Assert index page title, content and status code` () {
-        val entity = restTemplate.getForEntity<String>("/")
-        assertTrue { entity.statusCode == HttpStatus.OK }
-        assertTrue { entity.body?.contains("<h1>Green Habits</h1>") == true}
+    fun `Assert user info and status code`() {
+        val response = restTemplate.getForEntity("/api/user", Array<UserEntity>::class.java)
+        val body = response.body?.toList()
+
+        assertTrue { response.statusCode == HttpStatus.OK }
+        assertNotNull { body }
+
+        assertTrue { body?.get(0)?.email == "user1@naver.com" }
+        assertTrue { body?.get(0)?.name == "junsang" }
+        assertTrue { body?.get(0)?.description == "good investor" }
     }
 
     @AfterAll
     fun teardown() {
         println(">> Tear down")
     }
-
 }
