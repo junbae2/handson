@@ -11,21 +11,21 @@ import javax.persistence.*
 class UserStockEntity(
 
         @Column(name = "user_id", nullable = false)
-        val userId: Long,
+        var userId: Long,
 
         @Column(name = "stock_id", nullable = false)
-        val stockId: Long,
+        var stockId: Long,
 
-        @OneToOne(fetch = FetchType.EAGER)
-        @JoinColumn(name = "id", referencedColumnName = "stock_id", updatable = false, insertable = false)
-        val stock: StockEntity? = null,
+        @ManyToOne(fetch = FetchType.LAZY)
+        @JoinColumn(name = "stock_id", updatable = false, insertable = false)
+        var stock: StockEntity? = null,
 
         @Column(name = "traded_at", nullable = false)
-        val tradedAt: LocalDateTime,
+        var tradedAt: LocalDateTime,
 
         @Column(name = "sold_at")
-        val soldAt: LocalDateTime? = null,
+        var soldAt: LocalDateTime? = null,
 
         @Id @GeneratedValue
-        val id: Long = 0
+        var id: Long = 0
 ) : Serializable

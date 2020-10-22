@@ -21,6 +21,17 @@ class UserStockRepositoryTest @Autowired constructor(
 ) {
 
     @Test
+    fun `When findAll stocks then return stock list`() {
+        val stock1 = entityManager.persist(StockEntity("kospi", "030720", "동원수산", "fishing"))
+        val stock2 = entityManager.persist(StockEntity("kospi", "017810", "풀무원", "food and drink"))
+        val stock3 = entityManager.persist(StockEntity("kospi", "271980", "제일약품", "medicine"))
+
+        assertEquals(stock1.code, "030720")
+        assertEquals(stock2.code, "017810")
+        assertEquals(stock3.code, "271980")
+    }
+
+    @Test
     fun `When findByUserId then return user stocks`() {
         val user = entityManager.persist(UserEntity(
                 "user1@naver.com",
