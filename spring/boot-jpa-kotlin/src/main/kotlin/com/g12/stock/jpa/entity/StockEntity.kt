@@ -11,18 +11,18 @@ import javax.persistence.*
 )
 class StockEntity(
         @Column(name = "market", nullable = false, length = 25)
-        val market: String,
+        var market: String,
 
         @Column(name = "code", nullable = false, length = 20)
-        val code: String,
+        var code: String,
 
         @Column(name = "name", nullable = false, length = 50)
-        val name: String,
+        var name: String,
 
         @Column(name = "industry", nullable = false, length = 50)
-        val industry: String,
+        var industry: String,
 
         @Id @GeneratedValue
-        val id: Long = 0
+        var id: Long = 0
 
 ) : Serializable
