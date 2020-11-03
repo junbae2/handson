@@ -8,9 +8,9 @@ import javax.persistence.*
 @Table(indexes = [
     Index(name = "name", columnList = "name")
 ],
-uniqueConstraints = [
-    UniqueConstraint(name = "email", columnNames = ["email"])
-])
+        uniqueConstraints = [
+            UniqueConstraint(name = "email", columnNames = ["email"])
+        ])
 class UserEntity(
         @Column(name = "email", nullable = false, length = 255)
         var email: String,

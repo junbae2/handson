@@ -1,11 +1,9 @@
-
 group = "com.g12"
 version = "1.0-SNAPSHOT"
 description = "boot-jpa-kotlin"
 
 plugins {
     kotlinSpringBootPlugin()
-    kotlin("plugin.allopen") version "1.4.10"
 }
 
 allOpen {
