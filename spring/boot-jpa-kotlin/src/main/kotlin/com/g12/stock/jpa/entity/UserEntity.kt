@@ -2,7 +2,13 @@ package com.g12.stock.jpa.entity
 
 import java.io.Serializable
 import java.time.LocalDateTime
-import javax.persistence.*
+import javax.persistence.Column
+import javax.persistence.Entity
+import javax.persistence.GeneratedValue
+import javax.persistence.Id
+import javax.persistence.Index
+import javax.persistence.Table
+import javax.persistence.UniqueConstraint
 
 @Entity(name = "user")
 @Table(indexes = [

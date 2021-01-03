@@ -4,8 +4,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class OAuth2Application
+class MyTreeApplication
 
 fun main(args: Array<String>) {
-    runApplication<OAuth2Application>(*args)
+    runApplication<MyTreeApplication>(*args)
 }

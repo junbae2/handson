@@ -1,8 +1,5 @@
-package com.g12.oauth2.service
+package com.g12.oauth2.config
 
-import com.g12.oauth2.config.OAuth2Attributes
-import com.g12.oauth2.config.toSessionUser
-import com.g12.oauth2.config.toUserEntity
 import com.g12.oauth2.jpa.entity.UserEntity
 import com.g12.oauth2.jpa.repository.UserRepository
 import javax.servlet.http.HttpSession
